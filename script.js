@@ -10,13 +10,24 @@
   let cursorEmojis = ['🐾', '🍓', '🥧', '🐨'];
   let cursorIndex = 0;
 
+  // Only activate the custom cursor on devices with a precise pointer (mouse)
+  var hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+  if (hasFinePointer) {
+    document.body.classList.add('custom-cursor-active');
+  } else {
+    // Hide the emoji cursor element on touch/coarse-pointer devices
+    if (cursor) cursor.style.display = 'none';
+  }
+
   document.addEventListener('mousemove', function (e) {
+    if (!hasFinePointer) return;
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
   });
 
   // Cycle cursor emoji on click
   document.addEventListener('click', function () {
+    if (!hasFinePointer) return;
     cursorIndex = (cursorIndex + 1) % cursorEmojis.length;
     cursor.textContent = cursorEmojis[cursorIndex];
     cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
@@ -28,10 +39,12 @@
   // Change cursor on hover of interactive elements
   document.querySelectorAll('a, button, [tabindex="0"]').forEach(function (el) {
     el.addEventListener('mouseenter', function () {
+      if (!hasFinePointer) return;
       cursor.textContent = '🍓';
       cursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
     });
     el.addEventListener('mouseleave', function () {
+      if (!hasFinePointer) return;
       cursor.textContent = cursorEmojis[cursorIndex];
       cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     });
@@ -95,8 +108,7 @@
   // Step 2: strawberry drops at t=2.8s
   setTimeout(function () {
     // Position the drop strawberry relative to intro stage
-    var tartRect = null;
-    if (tartHold) tartRect = tartHold.getBoundingClientRect();
+    var tartRect = tartHold ? tartHold.getBoundingClientRect() : null;
     if (tartStrawberry) tartStrawberry.style.opacity = '0';
 
     if (dropStrawberry && tartRect) {
@@ -220,6 +232,20 @@
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      var name = contactForm.querySelector('[name="name"]').value.trim();
+      var email = contactForm.querySelector('[name="email"]').value.trim();
+      var message = contactForm.querySelector('[name="message"]').value.trim();
+
+      if (!name || !email || !message) {
+        showToast('请填写所有字段哦～ 🥧');
+        return;
+      }
+      // Basic email format check
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showToast('邮箱格式好像不对呢～ 🍓');
+        return;
+      }
+
       showToast('消息已发送！小考拉收到啦 🐨🍓');
       contactForm.reset();
     });
@@ -280,17 +306,6 @@
   }
 
   // =====================================================
-  // FUN: title bar animation
-  // =====================================================
-  var titleBase = '🐨 Sweet World · 甜甜的小窝';
-  var titleFrames = ['🍓', '🥧', '🐨', '💛', '🌸'];
-  var titleFrameIndex = 0;
-  setInterval(function () {
-    document.title = titleFrames[titleFrameIndex] + ' Sweet World · 甜甜的小窝';
-    titleFrameIndex = (titleFrameIndex + 1) % titleFrames.length;
-  }, 1500);
-
-  // =====================================================
   // HERO KOALA: extra click interactions
   // =====================================================
   var heroKoalaScene = document.querySelector('.hero-koala-scene');
@@ -299,8 +314,5 @@
       showToast('嗷呜！你点到我了！🐨💛');
     });
   }
-
-  // Prevent default cursor flash on load
-  document.body.style.cursor = 'none';
 
 })();

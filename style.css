@@ -53,8 +53,19 @@ body {
   font-family: 'Nunito', 'Noto Sans SC', sans-serif;
   background: var(--milk-white);
   color: var(--text-dark);
-  cursor: none;
   overflow-x: hidden;
+}
+
+/* Custom cursor — only hides the default on pointer devices */
+@media (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [tabindex="0"] {
+    cursor: none;
+  }
 }
 
 /* =====================================================
