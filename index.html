@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐨 Sweet World · 甜甜的小窝</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== CUSTOM CURSOR ====== -->
+  <div class="custom-cursor" id="cursor">🐾</div>
+
+  <!-- ====== FLOATING DECORATIONS ====== -->
+  <div class="floating-deco" id="floatingDeco" aria-hidden="true"></div>
+
+  <!-- ====== OPENING ANIMATION SCREEN ====== -->
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-stage">
+
+      <!-- Koala character -->
+      <div class="koala-wrap" id="koalaWrap">
+        <div class="koala" id="koalaChar">
+          <div class="koala-body">
+            <div class="koala-ear koala-ear--left" id="earLeft"></div>
+            <div class="koala-ear koala-ear--right" id="earRight"></div>
+            <div class="koala-face">
+              <div class="koala-eyes">
+                <div class="koala-eye koala-eye--left"></div>
+                <div class="koala-eye koala-eye--right"></div>
+              </div>
+              <div class="koala-nose"></div>
+              <div class="koala-mouth" id="koalaMouth"></div>
+            </div>
+            <!-- Tart in arms -->
+            <div class="koala-arms">
+              <div class="tart-hold" id="tartHold">
+                <div class="tart">
+                  <div class="tart-filling"></div>
+                  <div class="tart-crust"></div>
+                  <div class="tart-strawberry" id="tartStrawberry">🍓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouncing strawberry -->
+      <div class="drop-strawberry" id="dropStrawberry">🍓</div>
+
+      <!-- Welcome text -->
+      <div class="welcome-text" id="welcomeText">
+        <p class="welcome-line1">Welcome to my sweet world</p>
+        <p class="welcome-line2">~ 甜甜的小窝 ~</p>
+        <div class="loading-spinner" id="loadingSpinner">
+          <span class="spin-item">🥧</span>
+          <span class="spin-item spin-item--2">🍓</span>
+          <span class="spin-item spin-item--3">🐨</span>
+        </div>
+        <button class="enter-btn" id="enterBtn">进入我的小世界 ✨</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- END INTRO SCREEN -->
+
+  <!-- ====== MAIN PAGE ====== -->
+  <div class="main-page" id="mainPage">
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-logo">
+        <span class="nav-logo-icon">🐨</span>
+        <span class="nav-logo-text">SweetKoala</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">🏠 Home</a></li>
+        <li><a href="#portfolio" class="nav-link" data-section="portfolio">🥧 Portfolio</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">🐨 About Me</a></li>
+        <li><a href="#resume" class="nav-link" data-section="resume">📋 Resume</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">💌 Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-koala-scene">
+          <div class="hero-koala">
+            <div class="hero-koala-body">
+              <div class="hero-koala-ear hero-koala-ear--left"></div>
+              <div class="hero-koala-ear hero-koala-ear--right"></div>
+              <div class="hero-koala-face">
+                <div class="hero-koala-eyes">
+                  <div class="hero-koala-eye"></div>
+                  <div class="hero-koala-eye"></div>
+                </div>
+                <div class="hero-koala-nose"></div>
+                <div class="hero-koala-mouth-smile"></div>
+              </div>
+              <div class="hero-koala-tummy"></div>
+            </div>
+          </div>
+          <div class="hero-tarts">
+            <span class="hero-tart hero-tart--1">🥧</span>
+            <span class="hero-tart hero-tart--2">🥧</span>
+            <span class="hero-tart hero-tart--3">🥧</span>
+            <span class="hero-tart hero-tart--4">🥧</span>
+          </div>
+        </div>
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="hero-title-line1">Hi, I'm SweetKoala</span>
+            <span class="hero-title-emoji"> 🐨</span>
+          </h1>
+          <p class="hero-subtitle">A little koala who loves strawberry tarts and design.</p>
+          <p class="hero-subtitle-cn">一只喜欢草莓蛋挞、热爱设计的小考拉～</p>
+          <div class="hero-badges">
+            <span class="badge">🍓 Design</span>
+            <span class="badge">🥧 Creative</span>
+            <span class="badge">🐨 Cute</span>
+          </div>
+          <a href="#portfolio" class="btn-primary">查看我的作品 🥧</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>往下滑看看 ↓</span>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="section portfolio-section" id="portfolio">
+      <div class="section-header">
+        <h2 class="section-title">🥧 Portfolio <span class="section-title-cn">作品集</span></h2>
+        <p class="section-subtitle">每一个作品都是用心烤出的小蛋挞 🍓</p>
+      </div>
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card" tabindex="0">
+          <div class="card-sticker card-sticker--tl">🍓</div>
+          <div class="card-sticker card-sticker--br">🥧</div>
+          <div class="card-thumb card-thumb--pink">
+            <div class="card-thumb-icon">🎨</div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">UI Design</span>
+            <h3 class="card-title">Sweet App Design</h3>
+            <p class="card-desc">一款甜甜的美食 App，主打可爱风格界面设计～</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn-card">查看详情 →</button>
+          </div>
+        </article>
+
+        <article class="portfolio-card" tabindex="0">
+          <div class="card-sticker card-sticker--tl">🥧</div>
+          <div class="card-sticker card-sticker--br">🍓</div>
+          <div class="card-thumb card-thumb--yellow">
+            <div class="card-thumb-icon">✨</div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Branding</span>
+            <h3 class="card-title">Koala Café Brand</h3>
+            <p class="card-desc">考拉咖啡馆品牌全案设计，从 Logo 到包装一条龙。</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn-card">查看详情 →</button>
+          </div>
+        </article>
+
+        <article class="portfolio-card" tabindex="0">
+          <div class="card-sticker card-sticker--tl">🍓</div>
+          <div class="card-sticker card-sticker--br">💛</div>
+          <div class="card-thumb card-thumb--coffee">
+            <div class="card-thumb-icon">🌸</div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Illustration</span>
+            <h3 class="card-title">Strawberry Tart Series</h3>
+            <p class="card-desc">草莓蛋挞系列插画，每一幅都甜甜的、暖暖的。</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn-card">查看详情 →</button>
+          </div>
+        </article>
+
+        <article class="portfolio-card" tabindex="0">
+          <div class="card-sticker card-sticker--tl">🐨</div>
+          <div class="card-sticker card-sticker--br">🍓</div>
+          <div class="card-thumb card-thumb--mint">
+            <div class="card-thumb-icon">💻</div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Web Design</span>
+            <h3 class="card-title">This Homepage!</h3>
+            <p class="card-desc">就是这个网站啦～ 自己设计 + 开发的，超级开心 🎉</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn-card">就是这里 ✨</button>
+          </div>
+        </article>
+
+        <article class="portfolio-card" tabindex="0">
+          <div class="card-sticker card-sticker--tl">🥧</div>
+          <div class="card-sticker card-sticker--br">🌸</div>
+          <div class="card-thumb card-thumb--lavender">
+            <div class="card-thumb-icon">📱</div>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Motion</span>
+            <h3 class="card-title">Cute Sticker Pack</h3>
+            <p class="card-desc">考拉 + 蛋挞 + 草莓表情包，超可爱贴纸系列！</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn-card">查看详情 →</button>
+          </div>
+        </article>
+
+        <article class="portfolio-card portfolio-card--more" tabindex="0">
+          <div class="card-more-inner">
+            <div class="card-more-icon">🥧</div>
+            <p>更多作品</p>
+            <p class="card-more-sub">烤箱里还有更多～</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="section-header">
+        <h2 class="section-title">🐨 About Me <span class="section-title-cn">关于我</span></h2>
+      </div>
+      <div class="about-content">
+        <div class="about-avatar-wrap">
+          <div class="about-avatar">
+            <div class="about-koala">
+              <div class="about-koala-body">
+                <div class="about-koala-ear about-koala-ear--left"></div>
+                <div class="about-koala-ear about-koala-ear--right"></div>
+                <div class="about-koala-face">
+                  <div class="about-koala-eyes">
+                    <div class="about-koala-eye"></div>
+                    <div class="about-koala-eye"></div>
+                  </div>
+                  <div class="about-koala-nose"></div>
+                  <div class="about-koala-smile"></div>
+                </div>
+                <div class="about-koala-tummy"></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-avatar-deco">
+            <span>🍓</span>
+            <span>🥧</span>
+            <span>💛</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="about-card">
+            <h3>嗨，我是 SweetKoala！🐨</h3>
+            <p>A little koala who loves strawberry tarts and design.<br/>
+            一只喜欢草莓蛋挞、热爱设计的小考拉～</p>
+            <p>我热爱一切圆圆软软的东西：考拉、蛋挞、草莓、设计、代码……以及你！🍓</p>
+          </div>
+          <div class="about-skills">
+            <div class="skill-item">
+              <span class="skill-icon">🎨</span>
+              <div class="skill-bar-wrap">
+                <span class="skill-name">UI / Visual Design</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">✏️</span>
+              <div class="skill-bar-wrap">
+                <span class="skill-name">Illustration</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">💻</span>
+              <div class="skill-bar-wrap">
+                <span class="skill-name">Front-end Dev</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 78%"></div></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🥧</span>
+              <div class="skill-bar-wrap">
+                <span class="skill-name">Baking (strawberry tarts)</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 99%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME SECTION -->
+    <section class="section resume-section" id="resume">
+      <div class="section-header">
+        <h2 class="section-title">📋 Resume <span class="section-title-cn">简历</span></h2>
+        <p class="section-subtitle">我的人生蛋挞食谱 🥧</p>
+      </div>
+      <div class="resume-paper">
+        <div class="resume-columns">
+
+          <!-- Left column -->
+          <div class="resume-col">
+            <div class="resume-block">
+              <h3 class="resume-block-title"><span class="resume-icon">🥧</span> Education 教育背景</h3>
+              <div class="resume-timeline">
+                <div class="resume-item">
+                  <div class="resume-dot"></div>
+                  <div class="resume-item-content">
+                    <span class="resume-year">2020 – 2024</span>
+                    <h4>设计学 · 本科</h4>
+                    <p>Sweet University · 甜甜大学</p>
+                  </div>
+                </div>
+                <div class="resume-item">
+                  <div class="resume-dot"></div>
+                  <div class="resume-item-content">
+                    <span class="resume-year">2024 – 今</span>
+                    <h4>交互设计 · 研究生</h4>
+                    <p>Koala Design School · 考拉设计学院</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block">
+              <h3 class="resume-block-title"><span class="resume-icon">🍓</span> Skills 技能</h3>
+              <div class="resume-tags">
+                <span class="resume-tag">Figma</span>
+                <span class="resume-tag">Illustrator</span>
+                <span class="resume-tag">Photoshop</span>
+                <span class="resume-tag">HTML / CSS</span>
+                <span class="resume-tag">JavaScript</span>
+                <span class="resume-tag">After Effects</span>
+                <span class="resume-tag">Procreate</span>
+                <span class="resume-tag">蛋挞烘焙 🥧</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column -->
+          <div class="resume-col">
+            <div class="resume-block">
+              <h3 class="resume-block-title"><span class="resume-icon">🐨</span> Experience 工作经历</h3>
+              <div class="resume-timeline">
+                <div class="resume-item">
+                  <div class="resume-dot"></div>
+                  <div class="resume-item-content">
+                    <span class="resume-year">2023</span>
+                    <h4>UI Design Intern</h4>
+                    <p>Strawberry Studio · 草莓工作室</p>
+                    <ul class="resume-list">
+                      <li>负责 App 界面设计与交互优化</li>
+                      <li>完成品牌视觉系统搭建</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="resume-item">
+                  <div class="resume-dot"></div>
+                  <div class="resume-item-content">
+                    <span class="resume-year">2022</span>
+                    <h4>Graphic Design Intern</h4>
+                    <p>Egg Tart Creative · 蛋挞创意</p>
+                    <ul class="resume-list">
+                      <li>设计各类推广物料和插画</li>
+                      <li>参与品牌包装设计项目</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block">
+              <h3 class="resume-block-title"><span class="resume-icon">💛</span> Awards 荣誉奖项</h3>
+              <div class="resume-timeline">
+                <div class="resume-item">
+                  <div class="resume-dot resume-dot--star"></div>
+                  <div class="resume-item-content">
+                    <span class="resume-year">2023</span>
+                    <h4>🥇 设计大赛金奖</h4>
+                    <p>全国高校设计邀请赛</p>
+                  </div>
+                </div>
+                <div class="resume-item">
+                  <div class="resume-dot resume-dot--star"></div>
+                  <div class="resume-item-content">
+                    <span class="resume-year">2022</span>
+                    <h4>🌸 最佳插画奖</h4>
+                    <p>Sweet Design Festival</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="resume-download">
+          <a href="#" class="btn-primary btn-download">下载完整简历 📄</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="section-header">
+        <h2 class="section-title">💌 Contact <span class="section-title-cn">联系我</span></h2>
+        <p class="section-subtitle">来一起吃草莓蛋挞吧！🍓</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName">你的名字 🐨</label>
+              <input type="text" id="contactName" name="name" placeholder="可爱的你叫什么？" autocomplete="name" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">邮箱 📧</label>
+              <input type="email" id="contactEmail" name="email" placeholder="你的邮件地址～" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="contactMsg">留言 💬</label>
+              <textarea id="contactMsg" name="message" rows="4" placeholder="想和小考拉说什么？🍓" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-submit">发送消息 🥧</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-koala">🐨</div>
+            <h3>找到我～</h3>
+            <div class="contact-links">
+              <a href="mailto:hello@sweetkoala.com" class="contact-link">
+                <span>📧</span> hello@sweetkoala.com
+              </a>
+              <a href="#" class="contact-link">
+                <span>🐙</span> GitHub: @sweetkoala
+              </a>
+              <a href="#" class="contact-link">
+                <span>🎨</span> Dribbble: @sweetkoala
+              </a>
+              <a href="#" class="contact-link">
+                <span>📸</span> Instagram: @sweet_koala
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-made">Made with 🍓 + 🐨 + 🥧</p>
+        <p class="footer-copy">© 2024 SweetKoala · 甜甜小考拉</p>
+        <div class="footer-deco">
+          <span>🍓</span>
+          <span>🥧</span>
+          <span>🐨</span>
+          <span>💛</span>
+          <span>🍓</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- END MAIN PAGE -->
+
+  <script src="script.js"></script>
+</body>
+</html>
