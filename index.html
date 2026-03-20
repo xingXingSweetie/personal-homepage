@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minxin Portfolio</title>
+  <meta name="description" content="A super cute personal homepage with koala, strawberry, and tart vibes." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon-koala.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Ma+Shan+Zheng&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="opening" id="opening" aria-live="polite">
+    <div class="opening-stage">
+      <div class="opening-koala" aria-hidden="true">
+        <span class="hero-koala opening-koala-icon">🐨</span>
+        <div class="opening-tart">🥧 ❤ 🍓</div>
+      </div>
+
+      <button class="entry-button" id="entryButton" type="button" aria-label="Enter personal webpage">
+        click to my personal webpage
+      </button>
+    </div>
+  </div>
+
+  <header class="top-nav" id="home">
+    <div class="brand">Minxin Portfolio</div>
+    <nav>
+      <a href="#home" class="pill">Home</a>
+      <a href="#portfolio" class="pill">Portfolio / 作品集</a>
+      <a href="#paper" class="pill">Paper / 论文</a>
+      <a href="#resume" class="pill">Resume / 简历</a>
+      <a href="#contact" class="pill">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <div class="hero-left">
+        <p class="tag">北京大学深圳研究生院 27届硕士</p>
+        <h2>陈旻歆</h2>
+        <p class="intro-zh">关注C端AI与对话式产品体验，对用户交互路径、情绪反馈与模型能力边界有持续思考，
+希望打造既实用又有温度的 AI 产品。</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-tart">看我的作品</a>
+          <a href="#contact" class="btn btn-berry">一起合作</a>
+        </div>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-koala">🐨</div>
+        <div class="hero-tart-pile">🥧 🍓 🥧 🍓</div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="portfolio">
+      <h3>Portfolio / 作品集</h3>
+      <div class="cards">
+        <article class="project-card">
+          <span class="sticker">🍓</span>
+          <h4>华师大樱花地图</h4>
+          <p>基于 ArcGIS 和矢量数据制作的校园樱花地图，便于前往校园观赏樱花的游客查看樱花品种分布和盛放时间。</p>
+          <a href="portfolio/自绘樱花地图.png" class="card-link open-portfolio-image" data-image="portfolio/自绘樱花地图.png">查看项目</a>
+        </article>
+        <article class="project-card">
+          <span class="sticker">🥧</span>
+          <h4>五角场大学城美食网页 demo</h4>
+          <p>耗时10小时Codex产出的AI Coding作品，以地图为底座，AI提效决策，用校园身份构建信任社区。</p>
+          <a href="http://111.229.11.252/" class="card-link" target="_blank" rel="noopener noreferrer">查看项目</a>
+        </article>
+        <article class="project-card">
+          <span class="sticker">🍓</span>
+          <h4>PageIndex.ai 产品调研</h4>
+          <p>基于推理的"Vectorless RAG"，告别向量数据库与人工切片，像人类专家一样通过目录树推理阅读长文档。</p>
+          <a href="https://my.feishu.cn/docx/LIN2dN1tEotdDIxEDTRctIWGnpg?from=from_copylink" class="card-link">查看项目</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="paper">
+      <h3>Paper / 论文</h3>
+      <div class="about-box paper-list">
+        <article class="paper-item">
+          <h4>PlanGPT-VL: Enhancing Urban Planning with Domain-Specific Vision-Language Models</h4>
+          <p class="paper-meta">2024.12 - 2025.05 | 共同第一作者 | EMNLP 2025 Industry Track</p>
+          <p>
+            论文：<a href="https://arxiv.org/abs/2505.14481" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2505.14481</a>
+            主页：<a href="https://behavioral-spatial-ai-lab.github.io/plangpt-vl/" target="_blank" rel="noopener noreferrer">https://behavioral-spatial-ai-lab.github.io/plangpt-vl/</a>
+          </p>
+          <ul>
+            <li>从0到1构建首个多模态大模型在城市规划领域的评测框架。输出 Error Case 分析，建立技术层（模型幻觉）→数据层（标注噪声）→产品层（场景适配度）三级归因体系。</li>
+            <li>负责 SFT 指令跟随数据收集，组织打标团队标注优质 VQA 数据，设计多层级标注指南。</li>
+            <li>基于 ToC 用户画像界定业务容错率，针对性优化模型在开放性对话中的意图理解与通俗化表达能力，使测试阶段的点踩率降低 9.2%。</li>
+          </ul>
+        </article>
+
+        <article class="paper-item">
+          <h4>Multi-perspective Perception of City Image in Shanghai via Massive Short Videos</h4>
+          <p class="paper-meta">2023.09 - 2024.05 | 第一作者 | 2025.09 发表在 1 区期刊 International Journal of Applied Earth Observation and Geoinformation</p>
+          <ul>
+            <li>利用 Python 爬虫及网页插件进行视频批量采集，进行抽帧及格式化整理出视频及图像数据库。</li>
+            <li>基于 U-Net 深度学习模型语义分割识别图像，使用 SlowFast 框架进行人物动作行为识别。</li>
+            <li>视频地理位置信息提取，对于大部分不含签到地点的视频，进行描述文本中的地点提取、人工解译或视频理解。</li>
+          </ul>
+        </article>
+
+        <article class="paper-item">
+          <h4>Mapping public opinion dynamics on Weibo: a case study on epidemic prevention policy discussion</h4>
+          <p class="paper-meta">2022.10 - 2023.05 | 第一作者 | 指导老师：Marta Gonzalez | 2023 CUPUM 会议论文</p>
+          <ul>
+            <li>爬取 2022 年 10-12 月关键词为防疫政策相关的微博及其发布者用户，以政策出台为时间点构建时序网络，探究信息茧房、负面情绪传播等现象，并通过核密度分析探究用户社群之间是否有地理相关性。</li>
+            <li>利用 SnowNLP 第三方库对预处理过的评论文本进行 Sentiment Analysis 和 Opinion Extraction，计算高影响力用户的情感支持度以及热门话题的情感距离/争议度。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="resume">
+      <h3>Resume / 简历</h3>
+      <div class="resume-sheet">
+        <h4>🥧 个人经历</h4>
+        <p>可在此放置你的教育经历、实习经历、获奖与技能清单。</p>
+        <div class="resume-grid">
+          <div>
+            <strong>Education</strong>
+            <p>2021 - 2025 | Visual Communication Design</p>
+          </div>
+          <div>
+            <strong>Experience</strong>
+            <p>UI/UX Intern, Brand Visual Designer, Freelance Frontend</p>
+          </div>
+          <div>
+            <strong>Skills</strong>
+            <p>Figma, Photoshop, Illustrator, HTML, CSS, JavaScript</p>
+          </div>
+          <div>
+            <strong>Awards</strong>
+            <p>Campus Design Award, Illustration Competition Finalist</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contact">
+      <h3>Contact</h3>
+      <div class="contact-box">
+        <p>邮箱：minxin_chen@stu.pku.edu.cn</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with 🍓 + 🐨 + 🥧
+  </footer>
+
+  <div class="portfolio-modal" id="portfolioModal" aria-hidden="true">
+    <button class="portfolio-modal-close" id="portfolioModalClose" type="button" aria-label="Close image preview">×</button>
+    <img id="portfolioModalImage" src="" alt="Portfolio preview" />
+  </div>
+
+  <div class="clouds__base" id="cloudBase" role="button" tabindex="0" aria-label="Toggle clouds"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
