@@ -179,7 +179,7 @@ button,
 }
 
 main {
-  width: min(1200px, calc(100vw - 200px));
+  width: calc(100vw - 200px);
   margin: 24px auto 40px;
 }
 
@@ -452,17 +452,30 @@ main {
   font-size: 26px;
 }
 
-.resume-grid {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+.resume-viewer-wrap {
+  margin-top: 4px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(200, 150, 88, 0.45);
+  background: rgba(255, 255, 255, 0.72);
 }
 
-.resume-grid div {
-  padding: 12px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.6);
+.resume-viewer {
+  display: block;
+  width: 100%;
+  height: min(1200px, 82vh);
+  border: 0;
+}
+
+.resume-fallback {
+  margin: 10px 2px 0;
+  font-size: 17px;
+  color: #705846;
+}
+
+.resume-fallback a {
+  color: #cc4f83;
+  font-weight: 700;
 }
 
 footer {
@@ -580,8 +593,7 @@ footer {
     font-size: 30px;
   }
 
-  .cards,
-  .resume-grid {
+  .cards {
     grid-template-columns: 1fr;
   }
 
@@ -592,6 +604,10 @@ footer {
   .about-box,
   .contact-box {
     font-size: 18px;
+  }
+
+  .resume-viewer {
+    height: 72vh;
   }
 
   .clouds__base {
